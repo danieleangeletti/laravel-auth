@@ -11,6 +11,8 @@
                         Tutti i progetti
                     </h1>
 
+                    <a href="{{ route('admin.projects.create') }}" class="btn btn-primary w-100">ADD PROJECT</a>
+
                     <table class="table">
                         <thead>
                             <tr>

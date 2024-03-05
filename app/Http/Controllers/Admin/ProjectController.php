@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 // Models
 use App\Models\Project;
 
+// Form Requests
+use App\Http\Requests\StoreProjectRequest;
+
 class ProjectController extends Controller
 {
     /**
@@ -25,15 +28,17 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.projects.create");
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProjectRequest $request)
     {
-        //
+        $validated_data = $request->validated();
+
+        $project = Project::create($validated_data);
     }
 
     /**
