@@ -33,6 +33,13 @@
                                     <td>
                                         <a href="{{ route('admin.projects.show', ['project' => $project->slug]) }}" class="btn btn-primary">SHOW</a>
                                         <a href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}" class="btn btn-warning">EDIT</a>
+                                        <form onsubmit="return confirm('Are you sure you want to delete this project?')" action="{{route ('admin.projects.destroy', ['project' => $project->slug])}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">
+                                                DELETE
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
