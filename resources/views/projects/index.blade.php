@@ -17,7 +17,7 @@
                             {{ $project->title }}
                         </h5>
 
-                        <a href="{{ route('projects.show', ['project' => $project->id]) }}" class="btn btn-primary">SHOW ALL</a>
+                        <a href="{{ route('projects.show', ['project' => $project->slug]) }}" class="btn btn-primary">SHOW ALL</a>
                     </div>
                 </div>
             </div>
