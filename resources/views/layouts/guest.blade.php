@@ -20,18 +20,21 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('projects.index') }}">Projects</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('projects.index') }}">View Projects</a>
+                                </li>
                             @auth
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                                    <a class="nav-link" href="{{ route('admin.dashboard') }}">Dashboard</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Link 2</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Link 3</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.projects.index') }}">Manage Projects</a>
                                 </li>
                             @else
                                 <li class="nav-item">
