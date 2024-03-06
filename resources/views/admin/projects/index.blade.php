@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page-title', 'Tutti i progetti')
+@section('page-title', 'All projects')
 
 @section('main-content')
     <div class="row">
@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-body">
                     <h1 class="text-center text-success">
-                        Tutti i progetti
+                        All projects
                     </h1>
 
                     <a href="{{ route('admin.projects.create') }}" class="btn btn-primary w-100">ADD PROJECT</a>
@@ -31,15 +31,23 @@
                                     <td>{{ $project->slug }}</td>
                                     <td>{{ $project->content }}</td>
                                     <td>
-                                        <a href="{{ route('admin.projects.show', ['project' => $project->slug]) }}" class="btn btn-primary">SHOW</a>
-                                        <a href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}" class="btn btn-warning">EDIT</a>
-                                        <form onsubmit="return confirm('Are you sure you want to delete this project?')" action="{{route ('admin.projects.destroy', ['project' => $project->slug])}}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">
-                                                DELETE
-                                            </button>
-                                        </form>
+                                        <div class="d-flex">
+                                            <div class="ms-1 me-1">
+                                                <a href="{{ route('admin.projects.show', ['project' => $project->slug]) }}" class="btn btn-primary">SHOW</a>
+                                            </div>
+                                            <div class="ms-1 me-1">
+                                                <a href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}" class="btn btn-warning">EDIT</a>
+                                            </div>
+                                            <div class="ms-1 me-1">
+                                                <form onsubmit="return confirm('Are you sure you want to delete this project?')" action="{{route ('admin.projects.destroy', ['project' => $project->slug])}}" method="POST" class="d-inline-block">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger">
+                                                        DELETE
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
