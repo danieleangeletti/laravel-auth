@@ -23,7 +23,7 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
-            'content' => 'required|text'
+            'content' => 'required|string'
         ];
     }
 }
